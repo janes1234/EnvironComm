@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Plant Watering Confirmation</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("LhQTmAv1vozAXL-3Y"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Have the plants been watered?</h2>
+    <button id="confirmButton">Yes</button>
+    
+    <script>
+        document.getElementById("confirmButton").addEventListener("click", function() {
+            emailjs.send("service_b54w34f", "template_qup48ia", { // Replace with your EmailJS service and template ID
+                message: "Plants have been watered",
+                to_email: "janesmostert@gmail.com" // Replace with your email
+            })
+            .then(function(response) {
+                alert("Notification sent!");
+            }, function(error) {
+                alert("Error sending notification");
+            });
+        });
+    </script>
+</body>
+</html>
