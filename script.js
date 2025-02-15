@@ -4,7 +4,7 @@ document.getElementById("confirmButton").addEventListener("click", function () {
       to_email: "janesmostert@gmail.com" // Replace with your email
     })
       .then(function (response) {
-        alert("Notification sent!");
+        alert("Notification sent, Thank you!");
       }, function (error) {
         alert("Error sending notification");
       });
