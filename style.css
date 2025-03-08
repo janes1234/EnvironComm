@@ -75,3 +75,9 @@ body::after {
 .confirmation-section button:hover {
   background-color: #388E3C;
 }
+
+.confirmation-section button:disabled {
+  background-color: #A5D6A7; /* Light green to fit the theme */
+  color: #555;
+  cursor: not-allowed;
+}
